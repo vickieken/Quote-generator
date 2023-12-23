@@ -1,0 +1,137 @@
+/* VARIABLES  */
+
+:root {
+    /* screen sizes */
+    --Mobile-size: 375px;
+    --Desktop-size: 1440px;
+
+    /* primary Colors */
+    --Light-Cyan: hsl(193, 38%, 86%);
+    --Neon-Green: hsl(150, 100%, 66%);
+
+    /* neutral Colors */
+    --Grayish-Blue: hsl(217, 19%, 38%);
+    --Dark-Grayish-Blue: hsl(217, 19%, 24%);
+    --Dark-Blue: hsl(218, 23%, 16%);
+    
+    /* Typography */
+    /* Font */
+    --Family: [Inter](https://fonts.google.com/specimen/Inter);
+    --Weights: 800;
+    --Font-size-quote: 28px;
+}
+
+/* general styling */
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    background: var(--Dark-Blue);
+}
+
+.container {
+    position: relative;
+    max-width: 400px;
+    min-height: 250px;
+    background-color: var(--Dark-Grayish-Blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 9px rgba(0, 0, 0, 0.072);
+}
+
+.container .advice-num {
+    text-align: center;
+    color: var(--Neon-Green);
+    font-family: sans-serif;
+    font-size: 13px;
+    margin-bottom: 25px;
+    margin-top: 25px;
+}
+
+.container .content {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    color: var(--Light-Cyan);
+    width: 80%;
+    margin-bottom: 30px;
+    font-family: sans-serif;
+    line-height: 1.5;
+    transition: all .8s ease-in-out;
+}
+
+.container span img {
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.container .dice {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.container .dice .btn {
+    background-color: var(--Neon-Green);
+    padding: 10px;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    position: relative;
+}
+
+.container .dice .btn img {
+    width: 20px;
+    height: 20px;
+}
+
+.container .dice .btn::before {
+    position: absolute;
+    content: '';
+    width: 30px;
+    height: 30px;
+    background: var(--Neon-Green);
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: all .4s ease-in-out;
+}
+
+.container .dice .btn:hover {
+    cursor: pointer;
+}
+
+.container .dice .btn:hover::before {
+    filter: blur(15px);
+    opacity: 1;
+}
+
+.attribution {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--Neon-Green);
+    padding: 10px;
+}
+
+@media (max-width: 400px) {
+    body {
+        padding: 10px;
+    }
+}
