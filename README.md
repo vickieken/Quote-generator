@@ -48,7 +48,7 @@ Users should be able to:
 
 ### What I learned
 
-While working on this project I learnt a bit more on how to make my site much more responsive and beautiful
+While working on this project I learnt a bit more on how to make my site much more responsive and beautiful and I also learnt how to use an API to add voice over to app...
 
 Below is a code snippet for that:
 
@@ -61,9 +61,10 @@ Below is a code snippet for that:
 }
 ```
 ```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
+playBtn.addEventListener("click", ()=> {
+    let utterance = new SpeechSynthesisUtterance(`${contentEl.innerHTML}`)
+    speechSynthesis.speak(utterance)
+})
 ```
 
 ### Continued development

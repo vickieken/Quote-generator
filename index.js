@@ -4,6 +4,8 @@ const contentEl = document.querySelector(".contentEl");
 
 const btnEl = document.querySelector(".btn");
 
+const playBtn = document.querySelector(".play-btn")
+
 
 
 const randomQuotes = [
@@ -22,7 +24,7 @@ const randomQuotes = [
     "The best and most beautiful things in the world cannot be seen or even touched - they must be felt with the heart." -Helen Keller`,
     `"It is during our darkest moments that we must focus to see the light." -Aristotle`,
     `"Do not go where the path may lead, go instead where there is no path and leave a trail." -Ralph Waldo Emerson`,
-    "Be yourself; everyone else is already taken. -Oscar Wilde",
+    `"Be yourself; everyone else is already taken." -Oscar Wilde`,
     `"You must be the change you wish to see in the world." -Mahatma Gandhi`,
     `"Spread love everywhere you go. Let no one ever come to you without leaving happier." -Mother Teresa`,
     `"Darkness cannot drive out darkness: only light can do that. Hate cannot drive out hate: only love can do that." -Martin Luther King Jr.`,
@@ -69,6 +71,11 @@ const randomQuotes = [
     `Try not to become a man of success. Rather become a man of value." -Albert Einstein`,
     `"Don't be afraid to give up the good to go for the great." -John D. Rockefeller`
 ]
+
+playBtn.addEventListener("click", ()=> {
+    let utterance = new SpeechSynthesisUtterance(`${contentEl.innerHTML}`)
+    speechSynthesis.speak(utterance)
+})
 
 btnEl.addEventListener("click", ()=> {
     let adviceNumEl = document.querySelector(".advice-id").innerHTML = Math.floor(Math.random() * 50);
