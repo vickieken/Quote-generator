@@ -78,6 +78,61 @@ body {
     margin-bottom: 40px;
 }
 
+.container span   {
+    position: relative;
+}
+
+.container  span .play-btn {
+    margin-bottom: -40px;
+    position: absolute;
+    left: 45.8%;
+    width: 30px;
+    height: 30px;
+    top: -47px;
+    border-radius: 50%;
+    border: none;
+    background: var(--Neon-Green);
+    color: black;
+}
+
+.container  span .play-btn:hover {
+    cursor: pointer;
+}
+
+.container .play-btn::before {
+    position: absolute;
+    content: '';
+    width: 30px;
+    height: 30px;
+    background: var(--Neon-Green);
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: all .4s ease-in-out;
+}
+
+.container .play-btn:hover::before {
+    filter: blur(25px);
+    opacity: 1;
+}
+/* .container span::before {
+    content: '';
+    position: absolute;
+    top: 64%;
+    left: 46%;
+    width: 20px;
+    height: 20px;
+    background-color: var(--Neon-Green);
+    border-radius: 50%;
+    padding: 5px;
+} */
+
+.container span:hover::before {
+    filter: blur(15px);
+}
+
 .container .dice {
     position: absolute;
     top: 100%;
